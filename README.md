@@ -1,24 +1,25 @@
-# README
+Application Set Up in Local
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Clone this repository
 
-Things you may want to cover:
+git clone 'https://github.com/suganyaS10/whatIDidToday.git'
 
-* Ruby version
+cd to the project directory and run bundle install
 
-* System dependencies
+This application uses mysql as Database.
 
-* Configuration
+check the database configuration in config/database.yml and modify it accordingly
 
-* Database creation
+Then run rake db:create rake db:migrate rake seed:sample (To seed initial data. this loads an admin user and few tasks with likes and comments)
 
-* Database initialization
+run
 
-* How to run the test suite
+rails s
 
-* Services (job queues, cache servers, search engines, etc.)
+open the application in browser
 
-* Deployment instructions
+Log in using
 
-* ...
+Email: admin123@gmail.com password: admin123
+
+You can also Register yourself or Login
