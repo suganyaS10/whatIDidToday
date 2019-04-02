@@ -1,0 +1,41 @@
+.search-fields textarea{
+	width: 400px;
+	height: 50px;
+
+}
+#add-comment-btn{
+  border-radius: 6px;
+  padding: 5px;
+  display: inline-block;
+  background: #007AA8;
+  cursor: pointer;
+  color: #FFFFFF;
+  height: 40px;
+  width: 80px;
+}
+.comment-div{
+	padding: 10px;
+	border: 1px solid #007AA8;
+}
+.comments-icon img{
+	height: 20px;
+	cursor: pointer;
+}
+.comments-icon{
+	padding: 5px;
+}
+.comments-icon span {
+	vertical-align: top;
+}
+.comments-div{
+	width: 80%;
+}
+.comment-img {
+	float: left;
+	height: 40px;
+}
+.comment-desc {
+	margin-top: 0;
+	margin-left: 40px;
+	padding-top: 10px;
+}

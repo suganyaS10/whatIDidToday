@@ -1,0 +1,13 @@
+<div class="comments-div">
+	<% if comments.present? %>
+	<% comments.each do |comment| %>
+		<div class="comment-div">
+			<div><img src="/assets/user.png" class="comment-img">
+			<p class='comment-desc'><%= comment.description %></p></div>
+			<p class="height-10">User: <%= comment.user.name %></span>
+				<span class="right">Commented On: <%= comment.created_at.strftime("%d %b %y") %></span>		
+			</p>
+		</div>
+	<% end %>
+	<% end %>
+</div>

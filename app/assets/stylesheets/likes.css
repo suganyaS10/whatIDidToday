@@ -1,0 +1,12 @@
+.like-btn img{
+	height: 20px;
+	cursor: pointer;
+}
+.like-btn {
+	display: inline-block;
+	height: 20px;
+	padding: 2px;
+}
+.like-btn span{
+	vertical-align: top;
+}

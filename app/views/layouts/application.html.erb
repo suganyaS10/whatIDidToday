@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WhatIDidToday</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class="left left-header">
+      </div>
+
+      <div class="right right-header">
+        <ul class="header-right-ul zero-margin">
+          <% if current_user %>
+            <li class="pointer-cursor">  <%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+            <li class="pointer-cursor"><%= link_to(image_tag("minion.png"), {action: 'show', controller: 'users', id: current_user.id}, class: 'action-icons') %></li>
+          <% else %>
+            <li class="pointer-cursor">Log In </li>
+          <% end %>
+          <li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <%= yield %>
+    </div>
+
+    
+  </body>
+</html>

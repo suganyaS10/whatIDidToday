@@ -1,0 +1,118 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+html, body{
+	height: 100%;
+	margin: 0;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.zero-margin{
+	margin: 0;
+}
+.pointer-cursor{
+	cursor: pointer;
+}
+.left-header{
+	width: 80%;
+	padding: 10px;
+}
+.right-header{
+	width: 20%;
+}
+.right-header ul{
+
+}
+.right-header li{
+	list-style: none;
+  display: inline-block;
+  padding-right: 10px;
+}
+.right-header li a{
+	text-decoration: none;
+	color: #ffffff;
+}
+.show{
+	display: inline-block !important;
+}
+.height-10{
+	height: 10px;
+}
+.height-20{
+	height: 20px;
+}
+header{
+	margin: 0;
+	padding: 0;
+	min-height: 8%;
+	background-color: #007AA8;
+	color: #ffffff;
+}
+.action-icons img{
+	width: 30px;
+	height: 30px;
+}
+form{
+	width: 90%;
+	margin: 0 auto;
+	padding: 20px;
+}
+label{
+  width: 200px;
+  display: inline-block;
+}
+input,
+select{
+	height: 20px;
+  width: 300px;
+  /* box-shadow: none; */
+  outline: none;
+  border-radius: 5px;
+}
+textarea {
+	width: 400px;
+	height: 200px;
+}
+h2{
+	margin: 0;
+	margin-left: 20px;
+}
+.form-fields{
+	padding: 20px;
+}
+.main-container {
+	width: 80%;
+	margin: 0 auto;
+}
+.task-container {
+	border-bottom: 1px solid #007AA8;
+	width: 80%;
+}
+#add-task-btn {
+  border-radius: 6px;
+  padding: 5px;
+  display: inline-block;
+  background: #007AA8;
+  cursor: pointer;
+  color: #FFFFFF;
+  height: 20px;
+  width: 80px;
+  text-decoration: none;
+  margin: 10px;
+}

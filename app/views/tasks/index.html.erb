@@ -1,0 +1,48 @@
+<% if @tasks.present? %>
+
+	<% @tasks.each do |task| %>
+		<div class='task-container'>
+			<p><%= task[:description] %></p>
+			<p class="height-10">
+				<span class="left">Posted <%= task[:created_at] %> hours ago</span>
+				<span class="right">User: <%= task[:creator] %></span>
+			</p>
+
+			<p class="height-20">
+				<span class="right">
+				<% if task[:user_like_status] %>
+				<span class="like-btn" data-task-id= "<%= task[:id] %>" data-user-id="<%= current_user.id %>"><%= image_tag("like.png")%><span><%= task[:likes_count] %></span></span>
+				<% else %>
+					<span class="like-btn" data-task-id= "<%= task[:id] %>" data-user-id="<%= current_user.id %>"><%= image_tag("unlike.png") %><span><%= task[:likes_count] %></span></span>
+				<% end %>
+				<span class="comments-icon"><%= image_tag('comments.png') %><span><%= task[:comments_count] %></span></span>
+			</span>
+			</p>
+    
+    <div class='task-comments-container'>
+			<%= render 'comments/comments', comments: task[:comments] %>
+
+			<div class="comments-form">
+				<%= form_for :comment, url: "comments", remote: true, html: { id: 'comment-form' } do |form| %>
+
+				  <%= form.hidden_field :task_id, value: task[:id] %>
+				  <div class="search-fields">
+				  	<%= form.text_area :description %>
+				  </div>
+
+				  <div>
+				  	<%= form.submit 'Comment', id: 'ad-comment-btn', remote: true, 'data-task-id' => task[:id] %>
+				  </div>
+				<% end  %>
+
+			</div>	
+		</div>		
+
+		</div>
+	<% end %>
+
+<% else %>
+	<p> No Tasks added for today <p>
+<% end %>
+
+<%= link_to 'Add Task', new_task_path, class: 'action-btn', id: 'add-task-btn' %>

@@ -1,0 +1,14 @@
+<div class="global-display">
+
+	<div class="page-header">
+		<%= link_to image_tag("edit.png"), {action: 'edit', controller: 'users'}, class: 'action-icons' %>
+	</div>	
+
+	<div class="form-fields">
+	<p class="label">Name:</p>
+	<p class="disp-data"><%= @user.name %></p></div>
+
+	<div class="form-fields"><p class="label">Project:</p>
+	<p class="disp-data"><%= @user.role.name %></p></div>
+
+</div>

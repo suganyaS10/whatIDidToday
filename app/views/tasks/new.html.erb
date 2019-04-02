@@ -1,0 +1,14 @@
+<%= form_for @task do |t| %>
+
+  <div class='form'>
+		 
+		<div class="form-fields">
+			<%= t.label 'Description' %>
+			<%= t.text_area :description %>
+		</div>
+
+		<%= t.submit 'Create', class: 'action-btn' %>
+
+	</div>
+
+<% end %>

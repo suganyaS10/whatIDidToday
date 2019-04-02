@@ -1,0 +1,18 @@
+development:
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  database: what_i_did_today_development
+  username: postgres
+  password: postgres
+  host: 127.0.0.1
+  port: 5432
+test:
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  database: what_i_did_today_test
+  username: postgres
+  password: postgres
+  host: 127.0.0.1
+  port: 5432
