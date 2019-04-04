@@ -11,6 +11,6 @@ Rails.application.routes.draw do
    post 'likes/like_post',  to: 'likes#like_post'
 
    resources :comments
-   get 'comments/add_comments', to: 'comments#add_comments'
+   post 'comments/add_comments', to: 'comments#add_comments'
 
 end

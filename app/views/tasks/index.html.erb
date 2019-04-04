@@ -4,7 +4,7 @@
 		<div class='task-container'>
 			<p><%= task[:description] %></p>
 			<p class="height-10">
-				<span class="left">Posted <%= task[:created_at] %> hours ago</span>
+				<span class="left">Posted <%= task[:created_at] %></span>
 				<span class="right">User: <%= task[:creator] %></span>
 			</p>
 
@@ -15,25 +15,13 @@
 				<% else %>
 					<span class="like-btn" data-task-id= "<%= task[:id] %>" data-user-id="<%= current_user.id %>"><%= image_tag("unlike.png") %><span><%= task[:likes_count] %></span></span>
 				<% end %>
-				<span class="comments-icon"><%= image_tag('comments.png') %><span><%= task[:comments_count] %></span></span>
+				<span class="comments-icon"><%= image_tag('comments.png') %><span class=<%="comments_count_#{task[:id]}" %>><%= task[:comments_count] %></span></span>
 			</span>
 			</p>
     
     <div class='task-comments-container'>
-			<%= render 'comments/comments', comments: task[:comments] %>
-
-			<div class="comments-form">
-				<%= form_for :comment, url: "comments", remote: true, html: { id: 'comment-form' } do |form| %>
-
-				  <%= form.hidden_field :task_id, value: task[:id] %>
-				  <div class="search-fields">
-				  	<%= form.text_area :description %>
-				  </div>
-
-				  <div>
-				  	<%= form.submit 'Comment', id: 'ad-comment-btn', remote: true, 'data-task-id' => task[:id] %>
-				  </div>
-				<% end  %>
+    	<div id=<%= "task-comments-container_#{task[:id]}" %>>
+			  <%= render 'comments', comments: task[:comments], task_id: task[:id] %>
 
 			</div>	
 		</div>		

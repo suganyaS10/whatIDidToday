@@ -73,4 +73,13 @@ $(document).ready(function(){
 	   });
   })
 
+	$('.comments-form form').submit(function(e){
+		e.preventDefault();
+		var taskId = this.elements[1].value;
+		var description = this.elements[2].value;
+		var comment_params = JSON.stringify({task_id: taskId, description: description});
+		$.post("/comments/add_comments?comment=" + comment_params);
+		return false;
+	})
+
 });

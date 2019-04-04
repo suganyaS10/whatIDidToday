@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-	before_action :set_params, except: [:index, :new, :show, :edit, :list]
+	before_action :set_params, except: [:index, :new, :add_comments]
+	skip_before_action :verify_authenticity_token, only: [:add_comments]
 
 
 	def index
@@ -10,23 +11,12 @@ class CommentsController < ApplicationController
 		@comment = Comment.new
 	end
 
-	def create
-		@comment_params.merge!({user_id: current_user.id})
-		@comment = Comment.create(@comment_params)
+	def add_comments
+		@comment_resp = Comment.build_comments_hash(JSON.parse(params[:comment].to_s), current_user)
 
-		if @comment.save
-			flash[:success] = "Comment created Successfully"
-		else
-			flash[:error] = "Something went wrong. Try again"
-		end
-		
 		respond_to do |format|
       format.js       
     end
-	end
-
-	def add_comments
-		comments = Comment.where(task_id: params[:task_id])
 	end
 
 	private

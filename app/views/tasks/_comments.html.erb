@@ -1,0 +1,27 @@
+<div class="comments-div">
+	<% if comments.present? %>
+	<% comments.each do |comment| %>
+		<div class="comment-div">
+			<div><img src="/assets/user.png" class="comment-img">
+			<p class='comment-desc'><%= comment.description %></p></div>
+			<p class="height-10">User: <%= comment.user.name %></span>
+				<span class="right">Commented On: <%= comment.created_at.strftime("%d %b %y") %></span>		
+			</p>
+		</div>
+	<% end %>
+	<% end %>
+</div>
+<div class="comments-form">
+				<%= form_for :comment, url: "comments/add_comments", remote: true, html: { id: 'comment-form' } do |form| %>
+
+				  <%= form.hidden_field :task_id, value: task_id %>
+				  <div class="search-fields">
+				  	<%= form.text_area :description, id: "desc_#{task_id}" %>
+				  </div>
+
+				  <div>
+				  	<%= form.submit 'Comment', id: 'ad-comment-btn', remote: true, 'data-task-id' => task_id, click: 'form_action(this);' %>
+				  </div>
+				<% end  %>
+
+</div>
