@@ -15,7 +15,7 @@
 				<% else %>
 					<span class="like-btn" data-task-id= "<%= task[:id] %>" data-user-id="<%= current_user.id %>"><%= image_tag("unlike.png") %><span><%= task[:likes_count] %></span></span>
 				<% end %>
-				<span class="comments-icon"><%= image_tag('comments.png') %><span class=<%="comments_count_#{task[:id]}" %>><%= task[:comments_count] %></span></span>
+				<span class="comments-icon"><%= image_tag('comments.png') %><span id=<%="comments_count_#{task[:id]}" %>><%= task[:comments_count] %></span></span>
 			</span>
 			</p>
     

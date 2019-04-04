@@ -1,5 +1,5 @@
 $("#<%= @comment_resp[:task_container_id] %>").html("<%= escape_javascript(render partial: 'tasks/comments', locals: { comments: @comment_resp[:comments], task_id: @comment_resp[:task_id] } ) %>"); 
+$("#<%= @comment_resp[:comments_count_id] %>").text("<%= @comment_resp[:comments_count] %>");
 
-$("#<%= @comment_resp[:desc_id] %>").value("")
+$("#<%= @comment_resp[:desc_id] %>").value("");
 
-$("#<%= @comment_resp[:comments_count_id] %>").innerHTML = "<%= @comment_resp[:comments_count] %>"

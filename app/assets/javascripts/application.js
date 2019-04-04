@@ -51,28 +51,6 @@ $(document).ready(function(){
   	$($(this).parents().eq(2).find('.task-comments-container')).toggle();
   })
 
-  $('#add-comment-btn').click(function() {
-  	alert(this);
-  	var taskId = this.dataset.taskId;
-
-  	$.ajax({
-	     type: "GET",// GET in place of POST
-	     contentType: "application/json; charset=utf-8",
-	     url: "/comments/list",
-	     data : JSON.stringify({task_id: taskId}),
-	     dataType: "json",
-	     success: function (response) {
-	     	if (response && response.status === 200){
-
-	     	}   		
-
-	     }.bind(this),
-	     error: function (){
-	        window.alert("something wrong!");
-	     }
-	   });
-  })
-
 	$('.comments-form form').submit(function(e){
 		e.preventDefault();
 		var taskId = this.elements[1].value;
