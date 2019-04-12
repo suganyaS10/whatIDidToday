@@ -12,7 +12,7 @@ namespace :seed do
 
 
     (0..5).each do |i|
-    	task = Task.create({description: "sample_#{i} description", creator_id: user.id})
+    	task = Task.create({description: "sample_#{i} #{description}", creator_id: user.id})
     	if task.save
     		Rails.logger.info "Package Created"
     		puts "s"
